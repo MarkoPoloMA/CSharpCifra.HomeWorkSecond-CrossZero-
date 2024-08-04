@@ -1,6 +1,7 @@
 ﻿using System;
+using CSharpCrossZeroSolution;
 
-namespace CSharpCrossZeroSolution
+namespace CroosZero
 {
     public class ConsoleHelperMethod
     {
@@ -14,11 +15,10 @@ namespace CSharpCrossZeroSolution
 
             while (true)
             {
-                if (_checkTurn)
-
-                    PlayerTurn();
-                else
+                if (!_checkTurn)
                     ComputerTurn();
+                else
+                    PlayerTurn();
 
                 if (CheckForWin())
                 {
@@ -38,9 +38,9 @@ namespace CSharpCrossZeroSolution
         }
         private bool CheckForDraw()
         {
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (var j = 0; j < 3; j++)
                 {
                     if (_board[i, j] == ' ')
                         return false; 
@@ -86,18 +86,18 @@ namespace CSharpCrossZeroSolution
         }
         private void InitBoard()
         {
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (var j = 0; j < 3; j++)
                     _board[i, j] = ' ';
             }
         }
         private void PrintBoard()
         {
             Console.Clear();
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (var j = 0; j < 3; j++)
                 {
                     Console.Write(_board[i, j]);
                     if (j < 2)
@@ -111,7 +111,7 @@ namespace CSharpCrossZeroSolution
 
         private bool Checker(char p)
         {
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
             {
                 if (_board[i, 0] == p && _board[i, 1] == p && _board[i, 2] == p ||
                     _board[0, i] == p && _board[1, i] == p && _board[2, i] == p ||
