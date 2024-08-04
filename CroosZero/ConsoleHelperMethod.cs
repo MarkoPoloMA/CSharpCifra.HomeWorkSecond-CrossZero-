@@ -15,6 +15,7 @@ namespace CSharpCrossZeroSolution
             while (true)
             {
                 if (_checkTurn)
+
                     PlayerTurn();
                 else
                     ComputerTurn();
@@ -25,10 +26,28 @@ namespace CSharpCrossZeroSolution
                     Console.ReadKey();
                     return;
                 }
-
+                if (CheckForDraw())
+                {
+                    PrintBoard();
+                    Console.ReadKey();
+                    return;
+                }
                 _checkTurn = !_checkTurn;
                 PrintBoard();
             }
+        }
+        private bool CheckForDraw()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (_board[i, j] == ' ')
+                        return false; 
+                }
+            }
+            Console.WriteLine("Игра закончилась вничью!");
+            return true;
         }
 
         private void PlayerTurn()
