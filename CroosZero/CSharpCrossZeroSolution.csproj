@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAbstractMove.cs" />
+    <Compile Include="Interface\IAbstractMove.cs" />
     <Compile Include="MainBlock.cs" />
     <Compile Include="ConsoleHelperMethod.cs" />
-    <Compile Include="IMoveAbstract.cs" />
+    <Compile Include="Interface\IMoveAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,5 +55,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
